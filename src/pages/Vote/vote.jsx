@@ -1,7 +1,7 @@
 import './styles.css';
 import Header from '../../components/header/header';
 import Menu from '../../components/Menu/Menu';
-import VoteCounter from '../../components/VoteCounter/VoteCounter';
+import VoteCounter from '../../components/VoteCounter/voteCounter';
 import NotificationCheckbox from '../../components/NotificationCheckbox/NotificationCheckbox';
 import LoginModal from '../../components/loginModal/LoginModal';
 import { useState, useEffect } from 'react';
