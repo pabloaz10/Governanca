@@ -3,38 +3,16 @@
   "name": "governance",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "module"
+,
   "scripts": {
-    "dev": "vite",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "railway": {
-    "$schema": "https://railway.app/railway.schema.json",
-    "build": {
-      "builder": "NIXPACKS",
-      "buildCommand": "npm run build",
-      "buildEnvironment": "V2"
-    },
-    "deploy": {
-      "runtime": "V2",
-      "numReplicas": 1,
-      "startCommand": "npm run start",
-      "sleepApplication": false,
-      "restartPolicyType": "ON_FAILURE",
-      "restartPolicyMaxRetries": 10
-    }
-  },
-  "dependencies": {
-    "dotenv": "^16.4.7",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.4.0",
-    "react-router-dom": "^7.0.2",
-    "react-scripts": "^5.0.1"
-  },
+  "dev": "vite",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
+  
+  "vercel-build": "vite build"},
   "devDependencies": {
     "@eslint/js": "^9.15.0",
     "@types/react": "^18.3.12",
