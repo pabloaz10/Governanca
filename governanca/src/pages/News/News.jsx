@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './styles.css';
 import fetchData from '../../services/api';  // A função fetchData vai buscar os dados
+import Card from '../../components/Card/Card';  // Importando o componente Card
+import Menu from '../../components/Menu/Menu';
 
 function News() {
   const [news, setNews] = useState([]); // Estado para armazenar a lista de notícias
@@ -31,18 +33,10 @@ function News() {
   }
 
   return (
-    <div className="news-container">
-      {news.map((item, index) => (
-        <div key={index} className="news-card">
-          <img src={item.imagem} alt={item.titulo} className="news-image" />
-          <h2>{item.titulo}</h2>
-          <p>{item.data}</p>
-          <a href={item.link} target="_blank" rel="noopener noreferrer">
-            Leia mais
-          </a>
-        </div>
-      ))}
-    </div>
+    <>
+      <Card news={news} />
+      <Menu />
+    </>
   );
 }
 

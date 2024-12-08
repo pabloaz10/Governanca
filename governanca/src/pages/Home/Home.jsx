@@ -1,8 +1,9 @@
 import './styles.css'
+import Menu from '../../components/Menu/Menu';
 import Header from '../../components/header/header';
 import PropTypes from 'prop-types';
 import ButtonStatus from '../../components/button';
-import NavBar from '../../components/navbar/navbar';
+
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
@@ -13,7 +14,7 @@ function Home() {
     <div>
         <Header />
         <ButtonStatus title="Cancelar" status="cancel" color="red" />
-        <NavBar />
+        <Menu />
     </div>
   )
 }
