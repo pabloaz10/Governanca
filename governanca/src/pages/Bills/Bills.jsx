@@ -3,7 +3,7 @@ import './styles.css'
 function Bills() {
   return (
     <>
-       <h1>Bills</h1>
+       <h1>Projetos de leis</h1>
     </>
   )
 }
