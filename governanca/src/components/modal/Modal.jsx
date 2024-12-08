@@ -9,7 +9,7 @@ function Modal({ isOpen, onClose, descricao, onVote }) {
       <div className="modal-content">
         <h2>Descrição</h2>
         <p>{descricao}</p>
-        <button onClick={onVote}>Votar</button>
+        <button onClick={onVote}>Saiba mais</button>
         <button onClick={onClose}>Fechar</button>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import './styles.css';
 
-function BillItem({ data, titulo, autoria, descricao, link, status, onClick }) {
+function BillItem({ data, titulo, autoria, descricao, status, onClick }) {
   return (
     <div className="bill-item" onClick={onClick}>
       <h2>{titulo}</h2>
@@ -9,7 +9,6 @@ function BillItem({ data, titulo, autoria, descricao, link, status, onClick }) {
       <p><strong>Autoria:</strong> {autoria}</p>
       <p><strong>Descrição:</strong> {descricao}</p>
       <p><strong>Status:</strong> {status}</p>
-      {link && <a href={link} target="_blank" rel="noopener noreferrer">Mais informações</a>}
     </div>
   );
 }

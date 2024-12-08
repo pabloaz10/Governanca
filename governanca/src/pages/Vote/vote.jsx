@@ -20,7 +20,8 @@ function Vote() {
   const bill = location.state || {
     titulo: "PROJETO DE LEI N.º 187/2024",
     descricao: "Revoga a Lei Municipal nº 9.418, de 02 de abril de 2004, que desafetou a área de terras denominada Quadra 7, com 5.482,69m², no Conjunto Habitacional Santa Luzia, e autorizou a outorga da concessão de direito real de uso à Associação Núcleo Esperança – NES.",
-    status: "Em tramitação - prazo: 18/12/2024"
+    status: "Em tramitação - prazo: 18/12/2024",
+    link: "https://example.com/projeto-de-lei-187-2024" // Adicione o link do projeto
   };
 
   const handleVote = () => {
@@ -33,6 +34,10 @@ function Vote() {
     setIsChecked(!isChecked);
   };
 
+  const handleButtonClick = () => {
+    window.open(bill.link, '_blank');
+  };
+
   return (
     <>
       <Header title="Votação" />
@@ -42,6 +47,11 @@ function Vote() {
         <p><strong>Status:</strong> {bill.status}</p>
         <VoteCounter votes={votes} />
         <NotificationCheckbox isChecked={isChecked} onChange={handleCheckboxChange} />
+        <div className="button-group">
+          <button className="action-button" onClick={handleButtonClick}>Pasta Digital</button>
+          <button className="action-button" onClick={handleButtonClick}>Imprimir DOC</button>
+          <button className="action-button" onClick={handleButtonClick}>Imprimir PDF</button>
+        </div>
         <button className="vote-button" onClick={handleVote}>Votar</button>
       </div>
       <Menu />
