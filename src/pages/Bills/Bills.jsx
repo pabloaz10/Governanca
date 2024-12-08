@@ -1,6 +1,6 @@
 import './styles.css'
 import Header from '../../components/header/header';
-import BillItem from '../../components/BillItem/BillItem';
+import BillItem from '../../components/billItem/BillItem';
 import Modal from '../../components/modalLei/Modal';
 import governancaData from '../../data/governanca.json';
 import segurancaData from '../../data/seguranca.json';
