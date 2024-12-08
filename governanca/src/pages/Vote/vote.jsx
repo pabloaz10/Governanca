@@ -2,7 +2,8 @@ import './styles.css';
 import Header from '../../components/header/header';
 import Menu from '../../components/Menu/Menu';
 import VoteCounter from '../../components/VoteCounter/VoteCounter';
-import NotificationCheckbox from '../../components/notificationCheckbox/NotificationCheckbox';
+import NotificationCheckbox from '../../components/NotificationCheckbox/NotificationCheckbox';
+import LoginModal from '../../components/loginModal/LoginModal';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -11,10 +12,20 @@ function Vote() {
   const navigate = useNavigate();
   const [votes, setVotes] = useState(0);
   const [isChecked, setIsChecked] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para verificar se o usuário está logado
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false); // Estado para controlar a exibição do modal de login
+  const [loginCooldown, setLoginCooldown] = useState(false); // Estado para controlar o cronômetro
 
   useEffect(() => {
     const randomVotes = Math.floor(Math.random() * (5000 - 20 + 1)) + 20;
     setVotes(randomVotes);
+
+    // Verificar se há login e senha salvos no localStorage
+    const username = localStorage.getItem('username');
+    const password = localStorage.getItem('password');
+    if (username && password) {
+      setIsLoggedIn(true);
+    }
   }, []);
 
   const bill = location.state || {
@@ -25,6 +36,10 @@ function Vote() {
   };
 
   const handleVote = () => {
+    if (!isLoggedIn && !loginCooldown) {
+      setIsLoginModalOpen(true);
+      return;
+    }
     setVotes(votes + 1);
     alert('Voto registrado com sucesso!');
     navigate('/projetos-de-lei');
@@ -38,6 +53,19 @@ function Vote() {
     window.open(bill.link, '_blank');
   };
 
+  const handleCloseLoginModal = () => {
+    setIsLoginModalOpen(false);
+  };
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    setIsLoginModalOpen(false);
+    setLoginCooldown(true);
+    setTimeout(() => {
+      setLoginCooldown(false);
+    }, 6 * 60 * 1000); // 6 minutos em milissegundos
+  };
+
   return (
     <>
       <Header title="Votação" />
@@ -47,14 +75,17 @@ function Vote() {
         <p><strong>Status:</strong> {bill.status}</p>
         <VoteCounter votes={votes} />
         <NotificationCheckbox isChecked={isChecked} onChange={handleCheckboxChange} />
-        <div className="button-group">
-          <button className="action-button" onClick={handleButtonClick}>Pasta Digital</button>
-          <button className="action-button" onClick={handleButtonClick}>Imprimir DOC</button>
-          <button className="action-button" onClick={handleButtonClick}>Imprimir PDF</button>
+        <div className="acoes">
+          <div className="button-group">
+            <button className="action-button" onClick={handleButtonClick}>Pasta Digital</button>
+            <button className="action-button" onClick={handleButtonClick}>Imprimir DOC</button>
+            <button className="action-button" onClick={handleButtonClick}>Imprimir PDF</button>
+          </div>
+          <button className="vote-button" onClick={handleVote}>Votar</button>
         </div>
-        <button className="vote-button" onClick={handleVote}>Votar</button>
       </div>
       <Menu />
+      <LoginModal isOpen={isLoginModalOpen} onClose={handleCloseLoginModal} onLogin={handleLogin} />
     </>
   );
 }

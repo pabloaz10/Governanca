@@ -1,7 +1,7 @@
 import './styles.css'
 import Header from '../../components/header/header';
 import BillItem from '../../components/BillItem/BillItem';
-import Modal from '../../components/modal/Modal';
+import Modal from '../../components/modalLei/Modal';
 import governancaData from '../../data/governanca.json';
 import segurancaData from '../../data/seguranca.json';
 import mobilidadeUrbanaData from '../../data/mobilidade-urbana.json';
