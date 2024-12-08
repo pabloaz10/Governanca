@@ -7,6 +7,7 @@ import LoginModal from '../../components/loginModal/LoginModal';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+
 function Vote() {
   const location = useLocation();
   const navigate = useNavigate();
