@@ -19,7 +19,7 @@ export default async function fetchData() {
 // Chamando a função e exibindo o resultado no console
 fetchData().then((data) => {
     if (data) {
-        console.log("Dados recebidos:", data); // Exibe os dados no console
+        console.log("Dados recebidos:"); // Exibe os dados no console
     } else {
         console.log("Nenhum dado foi retornado.");
     }

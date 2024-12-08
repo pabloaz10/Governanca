@@ -1,0 +1,20 @@
+.tag-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.tag-buttons button {
+  padding: 2px;
+  font-size: 0.8rem;
+  background-color: #778da9ff;
+  border: none;
+  cursor: pointer;
+  color: black;
+  height: 40px;
+}
+
+.tag-buttons button:hover {
+  background-color: #486395ff;
+}

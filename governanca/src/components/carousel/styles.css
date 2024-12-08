@@ -1,0 +1,49 @@
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  height: 50vh; /* Define a altura do carrossel para metade da tela */
+  width: 100%;
+}
+
+.carousel-item {
+  width: 100%;
+  flex: 0 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  max-height: 70%;
+  object-fit: cover;
+}
+
+.carousel-item h2 {
+  margin: 10px 0;
+}
+
+.carousel-item p {
+  margin: 5px 0;
+}
+
+.carousel-item button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.carousel-item button:hover {
+  background-color: #0056b3;
+}

@@ -1,12 +1,36 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
+  width: 100dvw;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+.title {	
+    font-size: 24px;
+    margin: 10px 0 10px 8px;
+  }
+.home-container {
+  padding: 15px;
+}
+
+.carousel-section,
+.bills-section {
+  margin-bottom: 20px;
+}
+
+.bills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.bills-container .bill-item {
+  box-sizing: border-box;
+  margin: 8px;
 }

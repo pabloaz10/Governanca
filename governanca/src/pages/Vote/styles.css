@@ -1,0 +1,24 @@
+.vote-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.vote-container h2 {
+  margin-top: 0;
+}
+
+.vote-container p {
+  margin: 10px 0;
+}
+
+.vote-button {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.vote-button:hover {
+  background-color: #0056b3;
+}
