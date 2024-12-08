@@ -1,6 +1,6 @@
 {
   "homepage": "https://pabloaz10.github.io/Governanca/",
-  "name": "governanca",
+  "name": "governance",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +11,22 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "railway": {
+    "$schema": "https://railway.app/railway.schema.json",
+    "build": {
+      "builder": "NIXPACKS",
+      "buildCommand": "npm run build",
+      "buildEnvironment": "V2"
+    },
+    "deploy": {
+      "runtime": "V2",
+      "numReplicas": 1,
+      "startCommand": "npm run start",
+      "sleepApplication": false,
+      "restartPolicyType": "ON_FAILURE",
+      "restartPolicyMaxRetries": 10
+    }
   },
   "dependencies": {
     "dotenv": "^16.4.7",
