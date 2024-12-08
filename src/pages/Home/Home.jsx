@@ -2,7 +2,7 @@ import './styles.css';
 import Menu from '../../components/Menu/Menu';
 import Header from '../../components/header/header';
 import Carousel from '../../components/carousel/Carousel';
-import BillItem from '../../components/BillItem/BillItem';
+import BillItem from '../../components/billItem/BillItem';
 import { useEffect, useState } from 'react';
 import fetchData from '../../services/api';
 import governancaData from '../../data/governanca.json';
